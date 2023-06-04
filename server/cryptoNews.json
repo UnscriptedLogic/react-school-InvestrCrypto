@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "news_url": "https://thenewscrypto.com/investors-find-a-new-safe-haven-in-tradecurve-while-bitcoin-shows-uncertainty/?SNAPI",
+      "image_url": "https://crypto.snapi.dev/images/v1/y/n/bitcoin-313522.jpg",
+      "title": "Investors find a new safe haven in Tradecurve, while Bitcoin shows uncertainty",
+      "text": "Website: https://tradecurve.io/ Buy presale: https://app.tradecurve.io/sign-up Twitter: https://twitter.com/Tradecurveapp Telegram: https://t.me/tradecurve_official",
+      "source_name": "TheNewsCrypto",
+      "date": "Thu, 01 Jun 2023 05:31:23 -0400",
+      "topics": [],
+      "sentiment": "Neutral",
+      "type": "Article",
+      "tickers": ["BTC"]
+    },
+    {
+      "news_url": "https://coingape.com/?p=150376",
+      "image_url": "https://crypto.snapi.dev/images/v1/a/p/bitcoin2-313516.jpg",
+      "title": "BTCUSDT Open Interest Tumbles Amid Coinbase-US IRS Debacle, Bitcoin Crash Imminent?",
+      "text": "Bitcoin failed to build upside momentum on Hong Kong's crypto regulatory regime launch on June 1. BTC price tumbled 2%, extending Wednesday's downfall as Bitcoin closed the month 10% lower for the first time this year.",
+      "source_name": "Coingape",
+      "date": "Thu, 01 Jun 2023 05:24:26 -0400",
+      "topics": ["taxes"],
+      "sentiment": "Negative",
+      "type": "Article",
+      "tickers": ["BTC"]
+    },
+    {
+      "news_url": "https://www.fool.com/investing/2023/06/01/if-congress-passes-stablecoin-legislation-these-3/",
+      "image_url": "https://crypto.snapi.dev/images/v1/9/z/working-on-wall-street-313518.jpg",
+      "title": "If Congress Passes Stablecoin Legislation, These 3 Cryptos Have Massive Upside",
+      "text": "Stablecoin legislation could provide a boost to the growth prospects of blockchains with well-developed DeFi ecosystems.",
+      "source_name": "The Motley Fool",
+      "date": "Thu, 01 Jun 2023 05:21:00 -0400",
+      "topics": ["stablecoins"],
+      "sentiment": "Positive",
+      "type": "Article",
+      "tickers": ["ETH"]
+    }
+  ],
+  "total_pages": 3334
+}

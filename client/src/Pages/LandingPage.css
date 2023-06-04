@@ -1,0 +1,17 @@
+.custom-sticky {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  align-self: flex-start;
+}
+
+.flexbox-wrapper {
+  display: flex;
+  overflow: auto;
+}
+
+body {
+  -moz-user-select: none; /* firefox */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE */
+  user-select: none; /* Standard syntax */
+}
