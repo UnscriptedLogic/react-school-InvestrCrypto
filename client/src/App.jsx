@@ -10,6 +10,7 @@ const App = () => {
         <Route path="/callback" element={<Pages.RegistrationPage />} />
         <Route path="/account" element={<Pages.AccountPage />} />
         <Route path="/news" element={<Pages.NewsPage />} />
+        <Route path="/trade/:coin" element={<Pages.TradingPage />} />
       </Routes>
     </div>
   );

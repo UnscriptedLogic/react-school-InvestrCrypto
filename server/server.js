@@ -1,6 +1,6 @@
 //#region Imports and Initializers
 import { v4 as uuidv4 } from "uuid";
-
+import "dotenv/config.js";
 import * as backend from "./functions.js";
 
 //API aligned mock data
@@ -31,7 +31,7 @@ app.listen(5000, () => {
 
 //#endregion
 
-//#region CoinGecko(2): https://www.coingecko.com/en/api/documentation
+//#region CoinGecko(4): https://www.coingecko.com/en/api/documentation
 
 app.get("/allCoins", function (req, res) {
   let bitcoinData = bitcoin;
@@ -237,7 +237,7 @@ app.get("/news", function (req, res) {
 
 //#endregion
 
-//#region FIDOR
+//#region FIDOR()
 
 app.post("/transacttouser", (req, res) => {
   const access_token = req.query.access_token;
@@ -337,7 +337,7 @@ app.get("/getusertransactions", (req, res) => {
 //Token code request
 app.get("/performOAuth", function (req, res) {
   const params = {
-    client_id: "665a425af652c6e5",
+    client_id: process.env.CLIENT_ID,
     redirect_uri: "http://localhost:5173/callback",
     state: "",
     response_type: "code",
@@ -357,7 +357,7 @@ app.post("/requestToken", function (req, res) {
     grant_type: "authorization_code",
     code: req.query.code,
     redirect_uri: "http://localhost:5173/callback",
-    client_id: "665a425af652c6e5",
+    client_id: process.env.CLIENT_ID,
   };
 
   var url = `https://apm.tp.sandbox.fidorfzco.com/oauth/token?${new URLSearchParams(
@@ -369,7 +369,7 @@ app.post("/requestToken", function (req, res) {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       Authorization: `Basic ${Buffer.from(
-        "665a425af652c6e5:b8c625749684cd4226654003fba55a89"
+        `${process.env.CLIENT_ID}:${process.env.CLIENT_SECRET}`
       ).toString("base64")}`,
       Accept: "application/json",
     },
