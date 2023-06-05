@@ -40,7 +40,11 @@ const ValueChart = () => {
     );
   }
   return (
-    <Card className="grid w-full" decoration="top" decorationColor="amber">
+    <Card
+      className="grid w-full drop-shadow-md"
+      decoration="top"
+      decorationColor="amber"
+    >
       <Title>Cryptocurrency Value | Daily</Title>
       <Subtitle>Showing the past 30 days</Subtitle>
       <TabList
@@ -98,7 +102,7 @@ const ValueChart = () => {
       ) : (
         "Something went wrong"
       )}
-      <Divider />
+      {/* <Divider />
       <Title>Market Caps | Daily</Title>
       <Subtitle>Showing the past 30 days.</Subtitle>
       <TabList
@@ -218,7 +222,7 @@ const ValueChart = () => {
         ></BarChart>
       ) : (
         "Something went wrong"
-      )}
+      )} */}
     </Card>
   );
 };

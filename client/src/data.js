@@ -12,6 +12,8 @@ export const USEREMAIL_STRING = "user_email";
 export const USERID_STRING = "user_id";
 export const USERAFFILIATEID_STRING = "user_affiliate_id";
 
+export const USERBANKDATA_STRING = "userbankdata";
+
 //#endregion
 
 //#region CoinGecko
@@ -79,6 +81,31 @@ const getUserData = (access_token, token_type) => {
       window.location.replace("http://localhost:5173");
     });
 };
+
+export const GetUserTransactions = (access_token, token_type) => {
+  return axios.get(
+    `${rooturl}/getusertransactions?access_token=${access_token}&token_type=${token_type}`
+  );
+};
+
+export const GetUserBankData = (access_token, token_type) => {
+  return axios.get(
+    `${rooturl}/getuserbankdata?access_token=${access_token}&token_type=${token_type}`
+  );
+};
+
+export const TransactToUser = (
+  access_token,
+  token_type,
+  account_id,
+  recipient,
+  amount,
+  subject
+) => {
+  return axios.post(
+    `${rooturl}/transacttouser?access_token=${access_token}&token_type=${token_type}&account_id=${account_id}&recipient=${recipient}&amount=${amount}&subject=${subject}`
+  );
+};
 //#endregion
 
 //#region client related
@@ -88,3 +115,7 @@ export const SignOut = () => {
 };
 
 //#endregion
+
+export const CapitalizeFirst = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};
