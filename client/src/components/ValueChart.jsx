@@ -15,16 +15,13 @@ import { Waveform } from "@uiball/loaders";
 const ValueChart = () => {
   const [showTab, setShowTab] = useState("combined");
   const [showBarChartTab, setShowBarChartTab] = useState("combined");
-  const [showVolumeChartTab, setShowVolumeChartTab] = useState("combined");
 
   const [lineData, setLineData] = useState([]);
   const [chartData, setChartData] = useState([]);
-  const [volumeData, setVolumeData] = useState([]);
 
   useEffect(() => {
     GetAllCoinValues().then((response) => setLineData(response.data));
     GetMarketCaps().then((response) => setChartData(response.data));
-    GetTotalVolumes().then((response) => setVolumeData(response.data));
   }, []);
 
   if (lineData.length <= 0) {
@@ -61,6 +58,7 @@ const ValueChart = () => {
       </TabList>
       {showTab == "combined" ? (
         <AreaChart
+          autoMinValue
           data={lineData}
           className="mt-6"
           index="time"
@@ -69,6 +67,7 @@ const ValueChart = () => {
         ></AreaChart>
       ) : showTab == "btc" ? (
         <AreaChart
+          autoMinValue
           data={lineData}
           className="mt-6"
           index="time"
@@ -77,6 +76,7 @@ const ValueChart = () => {
         ></AreaChart>
       ) : showTab == "eth" ? (
         <AreaChart
+          autoMinValue
           data={lineData}
           className="mt-6"
           index="time"
@@ -85,6 +85,7 @@ const ValueChart = () => {
         ></AreaChart>
       ) : showTab == "doge" ? (
         <AreaChart
+          autoMinValue
           data={lineData}
           className="mt-6"
           index="time"
@@ -93,6 +94,7 @@ const ValueChart = () => {
         ></AreaChart>
       ) : showTab == "mana" ? (
         <AreaChart
+          autoMinValue
           data={lineData}
           className="mt-6"
           index="time"

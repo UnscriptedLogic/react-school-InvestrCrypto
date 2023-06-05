@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Title, Subtitle, Text } from "@tremor/react";
+import { useNavigate } from "react-router-dom";
 
 const CurrencyCard = ({
   fullName = "Crypto",
@@ -7,9 +8,15 @@ const CurrencyCard = ({
   sgdExchange = "1000",
   usdExchange = "1200",
 }) => {
+  const navigate = useNavigate();
+  useEffect(() => {}, []);
+
   return (
     <Card
-      className="h-32 p-4 drop-shadow-md"
+      onClick={() => {
+        navigate(`/trade/${name}`);
+      }}
+      className="h-32 cursor-pointer p-4 drop-shadow-md"
       decoration="left"
       decorationColor={
         name == "BTC"
