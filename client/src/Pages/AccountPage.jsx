@@ -255,7 +255,7 @@ const AccountPage = () => {
                       <TextInput
                         onChange={setAmount}
                         type="number"
-                        placeholder="SGD"
+                        placeholder="SGD in cents"
                       />
                     </div>
                     <div className="flex items-center gap-2">
@@ -265,7 +265,17 @@ const AccountPage = () => {
                         placeholder="e.g. Thanks for the movie!"
                       />
                     </div>
-                    <div className="flex justify-end">
+                    <div className="flex justify-between">
+                      <div
+                        className="cursor-pointer"
+                        onClick={() => {
+                          handleReturnMainScreen();
+                        }}
+                      >
+                        <Text className="mt-2 underline">
+                          Return to main screen
+                        </Text>
+                      </div>
                       <Button
                         onClick={() => {
                           performTransaction();

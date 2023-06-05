@@ -9,6 +9,7 @@ const App = () => {
         <Route path="/" element={<Pages.LandingPage />} />
         <Route path="/callback" element={<Pages.RegistrationPage />} />
         <Route path="/account" element={<Pages.AccountPage />} />
+        <Route path="/news" element={<Pages.NewsPage />} />
       </Routes>
     </div>
   );

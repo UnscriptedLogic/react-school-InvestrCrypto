@@ -11,10 +11,6 @@ const Navbar = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState("Log In");
 
-  const navigateToHome = () => {
-    navigate("/");
-  };
-
   const handleClick = () => {
     if (!loggedIn) {
       performOAuth();
@@ -45,12 +41,26 @@ const Navbar = () => {
               width={120}
               height={80}
               onClick={() => {
-                navigateToHome();
+                navigate("/");
               }}
             />
             <div className="flex items-center space-x-4">
-              <Title>News</Title>
-              <Title>Explore</Title>
+              <Title
+                className="cursor-pointer"
+                onClick={() => {
+                  navigate("/news");
+                }}
+              >
+                News
+              </Title>
+              <Title
+                className="cursor-pointer"
+                onClick={() => {
+                  navigate("/explore");
+                }}
+              >
+                Explore
+              </Title>
             </div>
           </div>
           <div className="flex items-center space-x-4">

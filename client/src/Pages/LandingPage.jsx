@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 import {
@@ -34,7 +35,6 @@ import { GetExchangeValues } from "../data";
 
 const LandingPage = () => {
   const navigate = useNavigate();
-  const [newsData, setNewsData] = useState();
   const [username, setUsername] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const [email, setEmail] = useState("Not Logged In");
@@ -58,6 +58,17 @@ const LandingPage = () => {
       let name = email.slice(1);
       setUsername((firstCapital + name).split("@")[0]);
       setLoggedIn(true);
+
+      toast.success(`Logged In as ${(firstCapital + name).split("@")[0]}`, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     }
 
     if (sessionStorage.getItem(USEREMAIL_STRING) !== null) {
@@ -71,8 +82,6 @@ const LandingPage = () => {
     if (sessionStorage.getItem(USERAFFILIATEID_STRING) !== null) {
       setAffiliateID(sessionStorage.getItem(USERAFFILIATEID_STRING));
     }
-
-    GetNewsData().then((response) => setNewsData(response.data));
 
     GetExchangeValues().then((response) => {
       setData(response.data);
@@ -91,6 +100,18 @@ const LandingPage = () => {
 
   return (
     <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <Navbar />
       <div className="mx-auto mt-20 w-2/3">
         <div className="mb-10 flex flex-grow gap-6">
