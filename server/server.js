@@ -10,9 +10,10 @@ import dogecoin from "./dogecoinMarket.json" assert { type: "json" };
 import manaCoin from "./manaMarket.json" assert { type: "json" };
 import news from "./cryptoNews.json" assert { type: "json" };
 import exchangeValue from "./exchangeValue.json" assert { type: "json" };
+import bitcoinOHLC from "./bitcoinOHLC.json" assert { type: "json" };
 
 //Connection
-import express from "express";
+import express, { response } from "express";
 import cors from "cors";
 const app = express();
 
@@ -206,6 +207,22 @@ app.get("/allCoinsVolume", (req, res) => {
   //           });
   //       });
   //   });
+});
+
+app.get("/coinohlc", (req, res) => {
+  // fetch(
+  //   "https://api.coingecko.com/api/v3/coins/bitcoin/ohlc?vs_currency=sgd&days=7"
+  // ).then((response) => response.json()).then((json) => res.send(json));
+
+  const data = bitcoinOHLC;
+
+  for (let index = 0; index < data.length; index++) {
+    const element = data[index];
+
+    element[0] = backend.toSingaporeDate(element[0]);
+  }
+
+  res.send(data);
 });
 
 //#endregion

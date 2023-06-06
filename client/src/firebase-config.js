@@ -1,9 +1,8 @@
-import "dotenv/config";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_APIKEY,
+  apiKey: "AIzaSyDhhA8PNvc4aJ8Xxh2nFD32oCQWvhXPySM",
   authDomain: "react-school-investr.firebaseapp.com",
   projectId: "react-school-investr",
   storageBucket: "react-school-investr.appspot.com",

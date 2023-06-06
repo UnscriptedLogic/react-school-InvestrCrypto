@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { GetTotalVolumes } from "../data";
 import {
   TabList,
   Tab,
@@ -18,13 +19,13 @@ const VolumeChart = () => {
   }, []);
 
   return (
-    <div>
-      <Title>Market Caps | Daily</Title>
+    <Card>
+      <Title>Total Volumes | Daily</Title>
       <Subtitle>Showing the past 30 days.</Subtitle>
       <TabList
         defaultValue="combined"
-        value={showBarChartTab}
-        onValueChange={setShowBarChartTab}
+        value={showVolumeChartTab}
+        onValueChange={setShowVolumeChartTab}
         className="w-full"
       >
         <Tab value="combined" text="Combined" className="font-semibold" />
@@ -33,50 +34,60 @@ const VolumeChart = () => {
         <Tab value="doge" text="Dogecoin" className="font-semibold" />
         <Tab value="mana" text="Mana" className="font-semibold" />
       </TabList>
-      {showBarChartTab == "combined" ? (
+      {showVolumeChartTab == "combined" ? (
         <BarChart
-          data={chartData}
+          autoMinValue
+          data={volumeData}
           className="mt-6"
           index="time"
           colors={["orange", "gray", "yellow", "blue"]}
           categories={["BTC", "ETH", "DOGE", "MANA"]}
+          yAxisWidth={48}
         ></BarChart>
-      ) : showBarChartTab == "btc" ? (
+      ) : showVolumeChartTab == "btc" ? (
         <BarChart
-          data={chartData}
+          autoMinValue
+          data={volumeData}
           className="mt-6"
           index="time"
           colors={["orange"]}
           categories={["BTC"]}
+          yAxisWidth={48}
         ></BarChart>
-      ) : showBarChartTab == "eth" ? (
+      ) : showVolumeChartTab == "eth" ? (
         <BarChart
-          data={chartData}
+          autoMinValue
+          data={volumeData}
           className="mt-6"
           index="time"
           colors={["gray"]}
           categories={["ETH"]}
+          yAxisWidth={48}
         ></BarChart>
-      ) : showBarChartTab == "doge" ? (
+      ) : showVolumeChartTab == "doge" ? (
         <BarChart
-          data={chartData}
+          autoMinValue
+          data={volumeData}
           className="mt-6"
           index="time"
           colors={["yellow"]}
           categories={["DOGE"]}
+          yAxisWidth={48}
         ></BarChart>
-      ) : showBarChartTab == "mana" ? (
+      ) : showVolumeChartTab == "mana" ? (
         <BarChart
-          data={chartData}
+          autoMinValue
+          data={volumeData}
           className="mt-6"
           index="time"
           colors={["blue"]}
           categories={["MANA"]}
+          yAxisWidth={48}
         ></BarChart>
       ) : (
         "Something went wrong"
       )}
-    </div>
+    </Card>
   );
 };
 

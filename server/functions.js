@@ -69,7 +69,7 @@ export const getPrices = (bitcoin, ethereum, doge, mana) => {
   return marketPrices;
 };
 
-const toSingaporeDate = (timestamp) => {
+export const toSingaporeDate = (timestamp) => {
   // Convert timestamp to Date object
   const date = new Date(timestamp);
 
@@ -271,4 +271,10 @@ export const formatVolumes = (bitcoin, ethereum, doge, mana) => {
   }
 
   return totalVolumes;
+};
+
+export const flipValues = (data) => {
+  return data.map((item) => {
+    return [item[0], item[4], item[3], item[1], item[2]];
+  });
 };

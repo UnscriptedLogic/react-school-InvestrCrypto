@@ -32,6 +32,10 @@ export const GetMarketCaps = () => {
 export const GetTotalVolumes = () => {
   return axios.get(`${rooturl}/allCoinsVolume`);
 };
+
+export const GetOHLC = (coin = "bitcoin") => {
+  return axios.get(`${rooturl}/coinohlc?coin=${coin}`);
+};
 //#endregion
 
 //#region CryptoNews
@@ -114,8 +118,8 @@ export const SignOut = () => {
   sessionStorage.clear();
 };
 
-//#endregion
-
 export const CapitalizeFirst = (word) => {
   return word.charAt(0).toUpperCase() + word.slice(1);
 };
+
+//#endregion
